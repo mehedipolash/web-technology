@@ -4,107 +4,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cycle Zone</title>
+  <title>task-1</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 90%;
+      padding: 5px;
       box-sizing: border-box;
     }
 
-    body {
-      background-color: powderblue;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      overflow: hidden;
-      margin-top: 10px;
-      margin-bottom: -20px;
+    fieldset {
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
     }
 
-    .app-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      max-width: 400px;
-      height: 100vh;
-      background-color: white;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-      border-radius: 10px;
-      position: fixed;
-    }
-
-    .logo-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px 0;
-    }
-
-    .logo-container img {
-      border-radius: 50%;
-      width: 87px;
-      height: 85px;
-    }
-
-    .title {
-      text-align: center;
-      color: black;
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    .content {
-      display: flex;
-      justify-content: center;
-      height: 100%;
-      width: 100%;
-    }
-
-    .left-panel {
-      width: 150px;
-      height: 100%;
-      background-color: lightcoral;
-    }
-
-    .right-panel {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .top-box {
-      width: 150px;
-      height: 60%;
-      background-color: grey;
-    }
-
-    .bottom-box {
-      width: 150px;
-      height: 40%;
-      background-color: burlywood;
+    textarea {
+      resize: vertical;
+      min-height: 80px;
     }
   </style>
 </head>
 
-<body>
+<body style="display: flex; flex-direction: column; align-items: center; min-height: 100vh; margin: 0; padding: 20px;">
 
-  <div class="app-container">
-    <div class="logo-container">
-      <img src="assets/Screenshot 2025-03-18 092605.png" alt="Image">
+  <!-- Header Section -->
+  <header style="text-align: center; margin-bottom: 20px;">
+    <img src="assets/Screenshot 2025-03-18 092605.png" alt="logo"
+      style="border-radius: 50%; width: 100px; height: 100px;">
+    <h2>App</h2>
+  </header>
+
+  <!-- Main Content Container -->
+  <div style="display: flex; width: 100%; max-width: 800px; border: 2px solid black; min-height: 500px;">
+
+    <!-- Left Side Form -->
+     
+    <div style="flex: 1; padding: 20px; background-color: beige; overflow-y: auto;">
+      <form>
+
+                        <h3 style="text-align: center;">Registration Form</h3>
+
+
+        <div class="form-group">
+          <label>Username:</label>
+          <input type="text" name="username" required>
+        </div>
+
+        <div class="form-group">
+          <label>Email:</label>
+          <input type="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label>Password:</label>
+          <input type="password" name="password" required>
+        </div>
+
+        <div class="form-group">
+          <label>Confirm Password:</label>
+          <input type="password" name="confirm_password" required>
+        </div>
+
+        <div class="form-group">
+          <label>Date of Birth:</label>
+          <input type="date" name="dob" required>
+        </div>
+
+        <fieldset>
+          <legend>Country</legend>
+          <div class="form-group">
+            <select name="country" style="width: 100%;">
+              <option value="Bangladesh">Bangladesh</option>
+              <option value="Pakistan">Pakistan</option>
+              <option value="Russia">Russia</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Gender</legend>
+          <div style="display: flex; gap: 15px;">
+            <label><input type="radio" name="gender" value="male"> Male</label>
+            <label><input type="radio" name="gender" value="female"> Female</label>
+            <label><input type="radio" name="gender" value="other"> Other</label>
+          </div>
+        </fieldset>
+
+        <div class="form-group">
+          <label>Favorite Color:</label>
+          <input type="color" name="color" style="width: 50px;">
+        </div>
+
+        <div class="form-group">
+          <label>Any Information:</label>
+          <textarea name="bio" rows="4"></textarea>
+        </div>
+
+        <fieldset>
+          <legend>Terms & Conditions</legend>
+          <label>
+            <input type="checkbox" name="terms" required>
+            I agree to the <a href="#">terms and conditions</a>
+          </label>
+        </fieldset>
+
+        <button type="submit"
+          style="margin-top: 20px; padding: 10px 20px; background-color: aquamarine; border: none; cursor: pointer;">
+          Submit
+        </button>
+      </form>
     </div>
 
-    <h2 class="title">Cycle Zone</h2>
-     <br>
-
-    <div class="content">
-      <div class="left-panel"></div>
-
-      <div class="right-panel">
-        <div class="top-box"></div>
-        <div class="bottom-box"></div>
+    <!-- Right Side Container -->
+    <div style="flex: 1; display: flex; flex-direction: column; background-color: goldenrod;">
+      <div style="flex: 1.5; display: flex; justify-content: center; align-items: center; 
+                  border-bottom: 2px solid black; background-color: teal; padding: 20px;">
+        Rectangle Content 1
+      </div>
+      <div style="flex: 1; display: flex; justify-content: center; align-items: center; padding: 20px;">
+        Rectangle Content 2
       </div>
     </div>
   </div>
